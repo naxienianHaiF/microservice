@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConnectionUtil {
 
-    private static final String URL = "jdbc:mysql://39.105.93.97:3306/learn";
+    private static final String URL = "jdbc:mysql://39.105.93.97:3306/websocket";
     private static final String USERNAME = "test";
     private static final String PWD = "123456";
     private static String claaname = "com.mysql.jdbc.Driver";
