@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          basedir: ./config
+          uri: https://github.com/naxienianHaiF/config.git    # config url
+          username: 1342633711@qq.com
+          password: naxienian1992
