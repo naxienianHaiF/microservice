@@ -15,8 +15,7 @@
 ### 1.2.configserver
 > config server 统一配置中心
 
-
-
-
-
+#### 2.个人信息
+> * [csdn blog](https://blog.csdn.net/naxieren1992)
+> * email **1623631899@qq.com**
 
