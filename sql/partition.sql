@@ -35,3 +35,33 @@ select * from partdemo where id > 6;
 
 explain PARTITIONS select * from partdemo where id >6 ;
 explain PARTITIONS select * from partdemo where id >6 and id < 13;
+
+/**
+  range list hash key分区，分区的条件必须是整型
+ */
+# range分区
+create table listpart(
+#     id int primary key auto_increment comment 'id',    -- 会报错
+    id int comment 'id',
+    username varchar(64) not null comment 'user name',
+    gender tinyint(2) not null default 0 comment 'gender'
+)engine = InnoDb
+partition by list(gender) (
+    partition p0 values in (0),
+    partition p1 values in (1),
+    partition p2 values in (2)
+    );
+
+
+insert into listpart(id, username, gender)
+VALUES (1, 'wjh', 1),(2, 'xcf', 2),
+       (3, 'lsx',2),(4,'cq',0);
+
+insert into listpart (id, username, gender)
+values (5,'sb', 0);
+/**
+  分区后  根据分区列来排序的，暂时不知道是不是默认设置的
+ */
+select * from listpart;
+
+explain select * from listpart where gender > 0;
