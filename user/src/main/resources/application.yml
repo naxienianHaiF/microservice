@@ -1,5 +1,7 @@
 server:
   port: 8020
+  servlet:
+    context-path: /${spring.application.name}
 
 eureka:
   client:
@@ -9,3 +11,34 @@ eureka:
 spring:
   application:
     name: user
+  datasource:
+    url: jdbc:mysql://39.105.93.97:3306/user?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    initialSize: 1
+    minIdle: 1
+    maxActive: 1
+    defaultAutoCommit: false
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    lazy-loading-enabled: true
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    multiple-result-sets-enabled: true
+    default-executor-type: reuse
+    lazy-load-trigger-methods: false
+    aggressive-lazy-loading: false
+    default-statement-timeout: 25000
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    auto-mapping-unknown-column-behavior:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.wjh.learn.domain.user
