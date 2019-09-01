@@ -12,6 +12,9 @@ public class ResData {
         this(code, msg, null);
     }
 
+    public ResData() {
+    }
+
     public ResData(Object data) {
         this.data = data;
     }
@@ -29,6 +32,10 @@ public class ResData {
 
     public static ResData SUCCESS() {
         return SUCCESS(null);
+    }
+
+    public static ResData SUCCESS(String msg) {
+        return new ResData(200, msg, null);
     }
 
     public static ResData fail(int code, String msg) {
