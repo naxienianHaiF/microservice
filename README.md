@@ -19,6 +19,7 @@
 >* JavaBean动态sql，既可以通过**\<script>**标签
 >来拼写动态SQL，也可以通过provider来写，主要是使用@SelectProvider、@UpdateProvider等来实现，type为provider类，method为方法。
 > ??Provider既可以使用StringBuffer等形式去拼接，也可以使用<strong>SQL</strong>这个类来拼接，
+>* logback [logback大致使用教程参考这个blog](https://juejin.im/post/5b128f326fb9a01e8b7814c4#heading-5)
 
 #### 2.个人信息
 > * [csdn blog](https://blog.csdn.net/naxieren1992)
