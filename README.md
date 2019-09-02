@@ -14,6 +14,11 @@
 > 项目定义了公共返回值，数据库mysql和MongoDB实体类等等
 ### 1.2.configserver
 > config server 统一配置中心
+### 1.3.user
+> user服务。用户服务，主要使用了mybatis。在配置上，Mapper支持xml和JavaBean。<br />
+>* JavaBean动态sql，既可以通过**\<script>**标签
+>来拼写动态SQL，也可以通过provider来写，主要是使用@SelectProvider、@UpdateProvider等来实现，type为provider类，method为方法。
+> ??Provider既可以使用StringBuffer等形式去拼接，也可以使用<strong>SQL</strong>这个类来拼接，
 
 #### 2.个人信息
 > * [csdn blog](https://blog.csdn.net/naxieren1992)
