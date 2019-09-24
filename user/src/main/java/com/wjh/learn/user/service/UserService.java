@@ -1,15 +1,13 @@
-package com.wjh.learn.user.service.impl;
+package com.wjh.learn.user.service;
 
 import com.wjh.learn.common.ResData;
 import com.wjh.learn.domain.user.User;
 import com.wjh.learn.user.mapper.UserMapper;
-import com.wjh.learn.user.service.UserService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
 import java.util.List;
 
 /**
@@ -18,11 +16,11 @@ import java.util.List;
  * @date 2019/8/28 21:24
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserService {
 
     private UserMapper userMapper;
 
-    public UserServiceImpl(UserMapper userMapper) {
+    public UserService(UserMapper userMapper) {
         this.userMapper = userMapper;
     }
 
