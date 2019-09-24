@@ -1,13 +1,14 @@
 项目介绍
 ===
 >项目主要是用来学习spring cloud和分布式事务的消息驱动和事件溯源模型。包含config server、eureke server.
-主要用到的技术有spring cloud、eureka、mysql、MongoDB、redis、kafka.
+主要用到的技术有spring cloud、eureka、gateway、mysql、MongoDB、redis、kafka.
 
 ## 1.项目架构
 * common 公共类，主要包含实体类和util
 * configserver config server
 * eurekaserver eureka server
 * user service user
+* gateway gateway网关
 * distributed try => commit => cancel
 
 ### 1.1.common
@@ -20,7 +21,18 @@
 >来拼写动态SQL，也可以通过provider来写，主要是使用@SelectProvider、@UpdateProvider等来实现，type为provider类，method为方法。
 > ??Provider既可以使用StringBuffer等形式去拼接，也可以使用<strong>SQL</strong>这个类来拼接，
 >* logback [logback大致使用教程参考这个blog](https://juejin.im/post/5b128f326fb9a01e8b7814c4#heading-5)
+## 2 Spring cloud
+### 2.1 eureka server
 
+### 2.2 openfeign
+>[openfeign CSDN博客](https://blog.csdn.net/naxieren1992/article/details/100750303) <br />
+>[openfeign官方文档](https://cloud.spring.io/spring-cloud-static/spring-cloud-openfeign/2.1.2.RELEASE/multi/multi_spring-cloud-feign.html)
+
+### 2.3 gateway
+>gateway学习是参考官方文档的，比较通俗易懂。和eureka整合，主要是设置
+>```
+>spring.cloud.gateway.discovery.locator = true
+>```
 #### 2.个人信息
 > * [csdn blog](https://blog.csdn.net/naxieren1992)
 > * email **1623631899@qq.com**
