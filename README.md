@@ -1,7 +1,8 @@
 项目介绍
 ===
 >项目主要是用来学习spring cloud和分布式事务的消息驱动和事件溯源模型。包含config server、eureke server.
-主要用到的技术有spring cloud、eureka、gateway、mysql、MongoDB、redis、kafka.
+主要用到的技术有spring cloud、eureka、gateway、mysql、MongoDB、redis、kafka、
+>docker.
 
 ## 1.项目架构
 * common 公共类，主要包含实体类和util
@@ -24,6 +25,11 @@
 >* Hystric 断路器 @HystrixCommand注解fallbackMethod的方法参数要和注解下面的参数类型保持一致
 ## 2 Spring cloud
 ### 2.1 eureka server
+> eurekaserver启动类上添加<code>@EnableEurekaServer</code>注解，项目依赖如下
+>```
+>spring-cloud-starter-netflix-eureka-server
+>```
+>* DockerFile使用
 
 ### 2.2 openfeign
 >[openfeign CSDN博客](https://blog.csdn.net/naxieren1992/article/details/100750303) <br />
@@ -34,7 +40,11 @@
 >```
 >spring.cloud.gateway.discovery.locator = true
 >```
-#### 2.个人信息
+### MongoDB
+websocket项目主要是使用的MongoDB，同时使用了learn和msg两个database。
+-[ ] MongoDB
+-[ ] websocket配置
+### 个人信息
 > * [csdn blog](https://blog.csdn.net/naxieren1992)
 > * email **1623631899@qq.com**
 
