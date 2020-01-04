@@ -1,16 +1,17 @@
 项目介绍
 ===
->项目主要是用来学习spring cloud和分布式事务的消息驱动和事件溯源模型。包含config server、eureke server.
+>项目主要是用来学习spring cloud和分布式事务的消息驱动和事件溯源模型。包含config server、eureke server。
 主要用到的技术有spring cloud、eureka、gateway、mysql、MongoDB、redis、kafka、
->docker.
+>docker。
 
 ## 1.项目架构
-* common 公共类，主要包含实体类和util
-* configserver config server
-* eurekaserver eureka server
-* user service user
-* gateway gateway网关
-* distributed try => commit => cancel
+* common <strong>公共类，主要包含实体类和util</strong>
+* configserver <strong>config server</strong>
+* eurekaserver <strong>eureka server</strong>
+* user <strong>service user</strong>
+* gateway <strong>gateway网关</strong>
+* distributed <strong>try => commit => cancel</strong>
+* websocket <strong>learn MongoDB and websocket</strong>
 
 ### 1.1.common
 > 项目定义了公共返回值，数据库mysql和MongoDB实体类等等
@@ -44,7 +45,9 @@
 websocket项目主要是使用的MongoDB，同时使用了learn和msg两个database。
 -[ ] MongoDB
 -[ ] websocket配置
+
 ### 个人信息
-> * [csdn blog](https://blog.csdn.net/naxieren1992)
+> * [csdn blog -- naxieren1992](https://blog.csdn.net/naxieren1992)
 > * email **1623631899@qq.com**
+> * <code>别问原理，问就是不会</code>
 
