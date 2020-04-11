@@ -1,0 +1,25 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>learn servlet</display-name>
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.wjh.learn.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello/servlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>login</servlet-name>
+    <servlet-class>com.wjh.learn.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+
+</web-app>
