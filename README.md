@@ -12,6 +12,7 @@
 * gateway <strong>gateway网关</strong>
 * distributed <strong>try => commit => cancel</strong>
 * websocket <strong>learn MongoDB and websocket</strong>
+* servlet <strong>learn servlet</strong>
 
 ### 1.1.common
 > 项目定义了公共返回值，数据库mysql和MongoDB实体类等等
@@ -41,6 +42,15 @@
 >```
 >spring.cloud.gateway.discovery.locator = true
 >```
+
+### 2.4 servlet
+> servlet有两种实现方式，implements Servelt和extends HTTPServlet。每一次request都会调用
+>```java
+>public void service(ServletRequest servletRequest, ServletResponse servletResponse)
+>```
+>方法，HTTPServlet的service方法使用了 模板模式。
+
+> web.xml配置servlet类和访问路径。
 ### MongoDB
 websocket项目主要是使用的MongoDB，同时使用了learn和msg两个database。
 -[ ] MongoDB
