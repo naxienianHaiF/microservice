@@ -22,4 +22,24 @@
     <url-pattern>/login.do</url-pattern>
   </servlet-mapping>
 
+  <filter>
+    <filter-name>urlFilter</filter-name>
+    <filter-class>com.wjh.learn.filter.URLFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>urlFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- error code page -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/error/404.jsp</location>
+  </error-page>
+
+  <!-- exception page -->
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/WEB-INF/error/exception.jsp</location>
+  </error-page>
 </web-app>
