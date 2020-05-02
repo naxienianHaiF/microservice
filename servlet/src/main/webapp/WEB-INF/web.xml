@@ -22,6 +22,16 @@
     <url-pattern>/login.do</url-pattern>
   </servlet-mapping>
 
+  <!-- 不知道为啥结果没有返回到前端页面 -->
+<!--  <servlet>-->
+<!--    <servlet-name>exception</servlet-name>-->
+<!--    <servlet-class>com.wjh.learn.servlet.ExceptionServlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>exception</servlet-name>-->
+<!--    <url-pattern>/innererror.do</url-pattern>-->
+<!--  </servlet-mapping>-->
+
   <filter>
     <filter-name>urlFilter</filter-name>
     <filter-class>com.wjh.learn.filter.URLFilter</filter-class>
@@ -36,6 +46,12 @@
     <error-code>404</error-code>
     <location>/WEB-INF/error/404.jsp</location>
   </error-page>
+
+  <!-- second error page settigns, which return uri -->
+<!--  <error-page>-->
+<!--    <error-code>500</error-code>-->
+<!--    <location>/innererror.do</location>-->
+<!--  </error-page>-->
 
   <!-- exception page -->
   <error-page>

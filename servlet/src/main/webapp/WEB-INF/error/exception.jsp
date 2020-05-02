@@ -6,6 +6,6 @@
 <body>
 
 <h1>exception page</h1>
-<h1>web.xml <strong>exception-type</strong></h1>
+web.xml <strong>exception-type</strong>
 </body>
 </html>
