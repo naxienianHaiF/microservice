@@ -50,7 +50,7 @@
 >```
 >方法，HTTPServlet的service方法使用了 模板模式。
 
-> web.xml配置servlet类和访问路径。
+Servlet 详细介绍参考[Servlet微服务](https://github.com/naxienianHaiF/microservice/tree/master/servlet)
 ### MongoDB
 websocket项目主要是使用的MongoDB，同时使用了learn和msg两个database。
 -[ ] MongoDB
