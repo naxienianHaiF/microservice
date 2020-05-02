@@ -9,4 +9,6 @@ Servlet，全称Java Servlet。是用Java编写的服务器端程序。其主要
 > * service()方法 Called by the servlet container to allow the servlet to respond to a request. 没请求一次都会执行这个方法；这个是**最重要**的方法
 > * getServletInfo()方法Returns information about the servlet；
 > * destroy()方法是在Servlet销毁的时候执行。
-
+---
+>``` javax.servlet.http.HttpServlet ``` 的service方法使用模板方法的设计思想，子类继承HttpServlet的时候，只需要重写对应请求类型的方法**doXXX**就行。
+> ![image-20200502152836491](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200502152836491.png)
