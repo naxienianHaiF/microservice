@@ -22,15 +22,24 @@
     <url-pattern>/login.do</url-pattern>
   </servlet-mapping>
 
-  <!-- 不知道为啥结果没有返回到前端页面 -->
-<!--  <servlet>-->
-<!--    <servlet-name>exception</servlet-name>-->
-<!--    <servlet-class>com.wjh.learn.servlet.ExceptionServlet</servlet-class>-->
-<!--  </servlet>-->
-<!--  <servlet-mapping>-->
-<!--    <servlet-name>exception</servlet-name>-->
-<!--    <url-pattern>/innererror.do</url-pattern>-->
-<!--  </servlet-mapping>-->
+  <!-- 产生异常，测试error-page -->
+  <servlet>
+    <servlet-name>makeException</servlet-name>
+    <servlet-class>com.wjh.learn.servlet.MakeExceptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>makeException</servlet-name>
+    <url-pattern>/makeexception.do</url-pattern>
+  </servlet-mapping>
+  <!-- 处理异常的servlet -->
+  <servlet>
+    <servlet-name>exception</servlet-name>
+    <servlet-class>com.wjh.learn.servlet.ExceptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>exception</servlet-name>
+    <url-pattern>/innererror.do</url-pattern>
+  </servlet-mapping>
 
   <filter>
     <filter-name>urlFilter</filter-name>
@@ -48,14 +57,14 @@
   </error-page>
 
   <!-- second error page settigns, which return uri -->
-<!--  <error-page>-->
-<!--    <error-code>500</error-code>-->
-<!--    <location>/innererror.do</location>-->
-<!--  </error-page>-->
+  <error-page>
+    <error-code>500</error-code>
+    <location>/innererror.do</location>
+  </error-page>
 
   <!-- exception page -->
-  <error-page>
-    <exception-type>java.lang.Exception</exception-type>
-    <location>/WEB-INF/error/exception.jsp</location>
-  </error-page>
+<!--  <error-page>-->
+<!--    <exception-type>java.lang.Exception</exception-type>-->
+<!--    <location>/WEB-INF/error/exception.jsp</location>-->
+<!--  </error-page>-->
 </web-app>
