@@ -4,15 +4,19 @@
 主要用到的技术有spring cloud、eureka、gateway、mysql、MongoDB、redis、kafka、
 >docker。
 
-## 1.项目架构
-* common <strong>公共类，主要包含实体类和util</strong>
-* configserver <strong>config server</strong>
-* eurekaserver <strong>eureka server</strong>
-* user <strong>service user</strong>
-* gateway <strong>gateway网关</strong>
-* distributed <strong>try => commit => cancel</strong>
-* websocket <strong>learn MongoDB and websocket</strong>
-* servlet <strong>learn servlet</strong>
+<details>
+  <summary>1.项目架构</summary>
+
+* [common](#1.1.common)
+* [configserver](#1.2.configserver)
+* [user](#1.3.user)
+* [eurekaserver](#2.1 eureka server)
+* [gateway](https://github.com/naxienianHaiF/java/wiki/JVM)
+* [distributed]()
+* [websocket]()
+* [servlet]()
+</details>
+
 
 ### 1.1.common
 > 项目定义了公共返回值，数据库mysql和MongoDB实体类等等
