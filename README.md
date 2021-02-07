@@ -10,7 +10,7 @@
 * [common](#1.1.common)
 * [configserver](#1.2.configserver)
 * [user](#1.3.user)
-* [eurekaserver](#2.1 eureka server)
+* [eurekaserver](#2.1.eurekaserver)
 * [gateway](https://github.com/naxienianHaiF/java/wiki/JVM)
 * [distributed]()
 * [websocket]()
