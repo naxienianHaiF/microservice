@@ -75,6 +75,11 @@ stop() {
   fi
 }
 
+restart() {
+  stop
+  run
+}
+
 input="$1";
 run() {
    echo "input content is $input"
@@ -86,6 +91,8 @@ run() {
       stop
    elif [ "$input" = "getpid" ]; then
       getpid
+   elif [ "$input" = "restart" ]; then
+      restart
    else
       echo "invalid input parameter"
    fi
