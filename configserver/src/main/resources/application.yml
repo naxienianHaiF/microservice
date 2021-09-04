@@ -16,4 +16,4 @@ spring:
           basedir: ./config
           uri: https://github.com/naxienianHaiF/config.git    # config url
           username: 1342633711@qq.com
-          password: '********'
+          password: 'naxienian1992'
