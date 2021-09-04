@@ -1,0 +1,35 @@
+server:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+#        - id: demo
+#          uri: http://127.0.0.1:8761
+#          predicates:
+#            - Method=GET
+#        - id: time_route
+#          uri: https://baidu.com
+#          predicates:
+#            - After=2021-04-10T09:00:00+08:00[Asia/Shanghai]
+#        - id: gateway-service
+#          uri: https://baidu.com
+#          predicates:
+#            - Query=smile
+        - id: user
+          uri: localhost:8020/
+          predicates:
+            - Path=/user/api/user/**
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
