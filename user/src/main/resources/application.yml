@@ -6,26 +6,33 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://49.234.237.113:8761/eureka/
 
 spring:
   application:
     name: user
   datasource:
-    url: jdbc:mysql://39.105.93.97:3306/user?characterEncoding=utf8&useSSL=false
-    username: root
-    password: 123456
-    initialSize: 1
-    minIdle: 1
-    maxActive: 1
-    defaultAutoCommit: false
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 'x'
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    user:
+      url: jdbc:mysql://rm-2vc5naiye6x4a8p538o.mysql.cn-chengdu.rds.aliyuncs.com/user?characterEncoding=utf8&useSSL=false
+      username: root
+      password: 12345
+      initialSize: 1
+      minIdle: 1
+      maxActive: 1
+      defaultAutoCommit: false
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      driverClassName: com.mysql.cj.jdbc.Driver
+    second:
+      url: jdbc:mysql://127.0.0.1:3306/learn?serverTimezone=UTC&characterEncoding=utf8&useSSL=false
+      username: root
+      password: Wjh1992~
+      driverClassName: com.mysql.cj.jdbc.Driver
+
 
 mybatis:
   configuration:
@@ -40,5 +47,7 @@ mybatis:
     use-generated-keys: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     auto-mapping-unknown-column-behavior:
-  mapper-locations: classpath:mybatis/*.xml
+  mapper-locations: classpath:mybatis/**/*.xml
   type-aliases-package: com.wjh.learn.domain.user
+  table:
+    auto: update

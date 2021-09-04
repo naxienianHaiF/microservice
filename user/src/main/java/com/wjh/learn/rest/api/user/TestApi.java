@@ -1,4 +1,4 @@
-package com.wjh.learn.user.rest.api;
+package com.wjh.learn.rest.api.user;
 
 import com.wjh.learn.common.ResData;
 import com.wjh.learn.user.service.HystricTestService;

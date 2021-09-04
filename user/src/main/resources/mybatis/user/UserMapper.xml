@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wjh.learn.user.mapper.UserMapper">
+
+    <!--    <resultMap id="BaseResultMap" type="com.wjh.learn.domain.user.User">-->
+    <!--        <result column="id" jdbcType="INTEGER" property="id" />-->
+    <!--        <result column="username" jdbcType="VARCHAR" property="username" />-->
+    <!--        <result column="pwd" jdbcType="VARCHAR" property="pwd" />-->
+    <!--        <result column="realName" jdbcType="VARCHAR" property="realName" />-->
+    <!--    </resultMap>-->
+
+    <insert id="save" parameterType="com.wjh.learn.domain.user.User">
+        insert into user(username, pwd, tellphone, nickname, self_introduction, image, create_time)
+        values (#{username}, #{pwd}, #{tellphone}, #{nickname}, #{selfIntroduction}, #{image}, #{createTime})
+    </insert>
+
+    <update id="update" parameterType="com.wjh.learn.domain.user.User">
+        update user
+        set pwd               = #{pwd},
+            nickname          = #{nickname},
+            self_introduction = #{selfIntroduction}
+        where id = #{id}
+    </update>
+
+    <select id="selectOneUser" resultType="com.wjh.learn.domain.user.User"
+            parameterType="com.wjh.learn.domain.user.User">
+        select * from user
+        <where>
+            <if test="id != null">id = #{id}</if>
+            <if test="username != null">and username = #{username}</if>
+            <if test="tellphone != null">and tellphone = #{tellphone}</if>
+        </where>
+    </select>
+
+    <select id="selectManyUser" resultType="com.wjh.learn.domain.user.User"
+            parameterType="com.wjh.learn.domain.user.User">
+        select * from user
+        <where>
+            <if test="username != null">username = #{username}</if>
+        </where>
+    </select>
+</mapper>
