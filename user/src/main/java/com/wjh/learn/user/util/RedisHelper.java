@@ -1,23 +1,27 @@
 package com.wjh.learn.user.util;
 
-import com.wjh.learn.user.config.RedisProperties;
+import com.wjh.learn.config.RedisProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 /**
  * redis工具类
  */
+@Component
+@ConditionalOnClass(name = "com.wjh.learn.config.RedisProperties")
 public class RedisHelper {
 
     private JedisPool jedisPool;
+    @Autowired
     private RedisProperties redisProperties;
 
-    public RedisHelper(JedisPool jedisPool, RedisProperties redisProperties) {
-        this.jedisPool = jedisPool;
-        this.redisProperties = redisProperties;
-    }
-
     public JedisPool getJedisPool() {
+        if (jedisPool == null) {
+            jedisPool = new JedisPool(redisProperties.getHost(), redisProperties.getPort());
+        }
         return jedisPool;
     }
 
@@ -37,7 +41,7 @@ public class RedisHelper {
      * @param index 数据库
      */
     public Jedis getJedisWithDb(int index) {
-        if (jedisPool != null) {
+        if (getJedisPool() != null) {
             Jedis jedis = jedisPool.getResource();
             jedis.auth(redisProperties.getPassword());
             jedis.select(index);
